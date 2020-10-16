@@ -43,6 +43,14 @@ public class LinkedList<E> {
     public void pop(){
         head=head.next;
     }
+    public void popLast(){
+        Node lastNode=head;
+        while(lastNode.next.next!=null){
+            lastNode=lastNode.next;
+        }
+        lastNode.next=null;
+
+    }
 
     public void printList(){
         if(head==null) System.out.println("LinkedList empty");

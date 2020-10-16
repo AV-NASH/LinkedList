@@ -9,8 +9,8 @@ public class LinkedListTest {
         linkedList.insert(56,30);
         linkedList.printList();
         System.out.println("-----");
-        linkedList.pop();
-        linkedList.printList();
+       linkedList.popLast();
+       linkedList.printList();
 
 
     }
