@@ -39,8 +39,9 @@ public class LinkedList<E> {
         Node tempnode= exisitngNode.next;
         exisitngNode.next=newNode;
         newNode.next=tempnode;
-
-
+    }
+    public void pop(){
+        head=head.next;
     }
 
     public void printList(){

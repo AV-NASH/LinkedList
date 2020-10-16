@@ -8,6 +8,9 @@ public class LinkedListTest {
         linkedList.add(56);
         linkedList.insert(56,30);
         linkedList.printList();
+        System.out.println("-----");
+        linkedList.pop();
+        linkedList.printList();
 
 
     }
