@@ -13,6 +13,21 @@ public class LinkedList<E> {
             head=node;
         }
     }
+
+    public void append(E data){
+        Node node=new Node(data);
+
+        if(head==null)
+            head=node;
+        else{
+            Node tempNode=head;
+            while(tempNode.next!=null)
+                tempNode=tempNode.next;
+            tempNode.next=node;
+        }
+    }
+
+
     public void printList(){
         if(head==null) System.out.println("LinkedList empty");
         else{
