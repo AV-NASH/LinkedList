@@ -1,6 +1,6 @@
-package linkedlistimplementation;
+package com.cg.linkedlistimplementation;
 
-public class Node<E> {
+public class Node<E extends Comparable> {
     E data;
     Node next;
 

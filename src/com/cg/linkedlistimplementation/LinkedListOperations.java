@@ -1,9 +1,9 @@
-package linkedlistimplementation;
+package com.cg.linkedlistimplementation;
 
 public class LinkedListOperations {
     public static void main(String[] args) {
         System.out.println("Welcome to linked list program");
-        LinkedList linkedList=new LinkedList();
+        SortedLinkedList linkedList=new SortedLinkedList();
         linkedList.add(70);
 
         linkedList.add(30);

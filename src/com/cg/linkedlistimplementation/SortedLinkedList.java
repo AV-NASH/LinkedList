@@ -1,6 +1,8 @@
-package linkedlistimplementation;
+package com.cg.linkedlistimplementation;
 
-public class LinkedList<E> {
+import java.util.Collections;
+
+public class SortedLinkedList<E extends Comparable> {
     Node head=null;
 
     public void add(E data){
@@ -12,6 +14,24 @@ public class LinkedList<E> {
             node.next=head;
             head=node;
         }
+        sort();
+
+    }
+    public void sort(){
+       Node tempNode=head;
+        E tempData;
+       while(tempNode.next!=null){
+           Node sortNode=tempNode;
+           while(sortNode.next!=null){
+               if(tempNode.data.compareTo(sortNode.next.data)>0) {
+                   tempData= (E) tempNode.data;
+                   tempNode.data=sortNode.next.data;
+                   sortNode.next.data=tempData;
+               }
+               sortNode=sortNode.next;
+           }
+           tempNode=tempNode.next;
+       }
     }
 
     public void append(E data){
@@ -25,6 +45,7 @@ public class LinkedList<E> {
                 tempNode=tempNode.next;
             tempNode.next=node;
         }
+        sort();
     }
     public void insert(E exisitngData, E newData){
         Node exisitngNode=getNode(exisitngData);
@@ -32,6 +53,7 @@ public class LinkedList<E> {
         Node tempnode= exisitngNode.next;
         exisitngNode.next=newNode;
         newNode.next=tempnode;
+        sort();
     }
     public void pop(){
         head=head.next;
@@ -84,9 +106,9 @@ public class LinkedList<E> {
     }
 
     public boolean search(E searchData){
-       if(getNode(searchData)==null) return false;
-       else return true;
-        }
+        if(getNode(searchData)==null) return false;
+        else return true;
+    }
     public int size(){
         Node node=head;
         int size=0;
@@ -101,11 +123,11 @@ public class LinkedList<E> {
     public void printList(){
         if(head==null) System.out.println("LinkedList empty");
         else{
-        Node node=head;
-        while(node!=null){
-            System.out.println(node.data);
-            node=node.next;
-        }
+            Node node=head;
+            while(node!=null){
+                System.out.println(node.data);
+                node=node.next;
+            }
 
         }
     }
