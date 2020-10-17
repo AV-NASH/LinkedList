@@ -51,6 +51,19 @@ public class LinkedList<E> {
         lastNode.next=null;
 
     }
+    public boolean search(E searchData){
+        boolean result=false;
+        Node searchNode=head;
+        while(searchNode!=null){
+            if(searchNode.data.equals(searchData)){
+                result=true;
+                break;
+            }
+            searchNode=searchNode.next;
+            }
+        return result;
+        }
+
 
     public void printList(){
         if(head==null) System.out.println("LinkedList empty");
