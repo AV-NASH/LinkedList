@@ -20,4 +20,16 @@ public class LinkedListOperationsTest {
     public void WhenElement_isPresent_ReturnTrue(){
         Assert.assertTrue(linkedList.search(30));
     }
+
+    @Test
+    public void givenData_return_CorrectNode() {
+        Assert.assertEquals(30,linkedList.getNode(30).data);
+    }
+
+    @Test
+    public void checkElemement_isInsertedAfter_ParticularElement() {
+
+        linkedList.insert(30,40);
+        Assert.assertEquals(40,linkedList.getNode(30).next.data);
+    }
 }

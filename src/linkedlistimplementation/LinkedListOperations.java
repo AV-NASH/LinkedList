@@ -10,8 +10,8 @@ public class LinkedListOperations {
         linkedList.add(56);
         linkedList.printList();
         System.out.println("-----");
-      if( linkedList.search(30))
-          System.out.println("Elemt is present");
+        linkedList.insert(30,40);
+        linkedList.printList();
 
 
     }

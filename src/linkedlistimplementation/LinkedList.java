@@ -27,15 +27,8 @@ public class LinkedList<E> {
         }
     }
     public void insert(E exisitngData, E newData){
-        Node exisitngNode;
+        Node exisitngNode=getNode(exisitngData);
         Node newNode=new Node(newData);
-        exisitngNode=head;
-
-        while(exisitngNode!=null){
-            if(exisitngNode.data.equals(exisitngData))
-                break;
-            exisitngNode=exisitngNode.next;
-        }
         Node tempnode= exisitngNode.next;
         exisitngNode.next=newNode;
         newNode.next=tempnode;
@@ -51,17 +44,21 @@ public class LinkedList<E> {
         lastNode.next=null;
 
     }
-    public boolean search(E searchData){
-        boolean result=false;
+    public Node getNode(E Data){
         Node searchNode=head;
         while(searchNode!=null){
-            if(searchNode.data.equals(searchData)){
-                result=true;
+            if(searchNode.data.equals(Data)){
+
                 break;
             }
             searchNode=searchNode.next;
-            }
-        return result;
+        }
+        return searchNode;
+    }
+
+    public boolean search(E searchData){
+       if(getNode(searchData)==null) return false;
+       else return true;
         }
 
 
