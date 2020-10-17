@@ -12,6 +12,10 @@ public class LinkedListOperations {
         System.out.println("-----");
         linkedList.insert(30,40);
         linkedList.printList();
+        System.out.println("-----");
+        linkedList.remove(40);
+        linkedList.printList();
+        System.out.println("Size of linked list is "+linkedList.size());
 
 
     }

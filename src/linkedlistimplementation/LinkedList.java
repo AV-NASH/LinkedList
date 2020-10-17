@@ -55,11 +55,47 @@ public class LinkedList<E> {
         }
         return searchNode;
     }
+    public Node getTail(){
+        Node tailNode=head;
+        while(tailNode.next!=null){
+            tailNode=tailNode.next;
+        }
+        return  tailNode;
+    }
+
+    public void remove(E removeData){
+        Node removedNode=getNode(removeData);
+        Node beforeRemovedNode = head;
+        if(removeData==head){pop();}
+        else{
+            if(removedNode==getTail()){popLast();}
+            else {
+
+                while (beforeRemovedNode != null) {
+                    if (beforeRemovedNode.next.data.equals(removeData)) {
+
+                        break;
+                    }
+                    beforeRemovedNode = beforeRemovedNode.next;
+                }
+            }
+        }
+        beforeRemovedNode.next=removedNode.next;
+    }
 
     public boolean search(E searchData){
        if(getNode(searchData)==null) return false;
        else return true;
         }
+    public int size(){
+        Node node=head;
+        int size=0;
+        while(node!=null){
+            size++;
+            node=node.next;
+        }
+        return size;
+    }
 
 
     public void printList(){

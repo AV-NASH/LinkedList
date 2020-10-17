@@ -32,4 +32,16 @@ public class LinkedListOperationsTest {
         linkedList.insert(30,40);
         Assert.assertEquals(40,linkedList.getNode(30).next.data);
     }
+
+    @Test
+    public void givenList_ReturnsCorrect_Size() {
+        Assert.assertEquals(3,linkedList.size());
+    }
+
+    @Test
+    public void whenRemoved_ReturnsCorrect_size() {
+        linkedList.remove(30);
+        Assert.assertEquals(2,linkedList.size());
+
+    }
 }
